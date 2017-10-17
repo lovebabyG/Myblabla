@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.example.myblabla.db.City;
 import com.example.myblabla.db.Province;
-import com.example.myblabla.db.Country;
+import com.example.myblabla.db.County;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,8 +60,8 @@ public class Utility {
                 JSONArray allCounties = new JSONArray(response);
                 for (int i = 0; i < allCounties.length(); i++) {
                     JSONObject countyObject = allCounties.getJSONObject(i);
-                    Country county = new Country();
-                    county.setCountryName(countyObject.getString("name"));
+                    County county = new County();
+                    county.setCountyName(countyObject.getString("name"));
                     county.setWeatherId(countyObject.getString("weather_id"));
                     county.setCityId(cityId);
                     county.save();

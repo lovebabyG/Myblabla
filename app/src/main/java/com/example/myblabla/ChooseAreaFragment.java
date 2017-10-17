@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myblabla.db.City;
-import com.example.myblabla.db.Country;
+import com.example.myblabla.db.County;
 import com.example.myblabla.db.Province;
 import com.example.myblabla.util.HttpUtil;
 import com.example.myblabla.util.Utility;
@@ -49,7 +49,7 @@ public class ChooseAreaFragment extends Fragment {
 
     private List<Province> provinceList;
     private List<City> cityList;
-    private List<Country> countryList;
+    private List<County> countyList;
     private Province selectedProvince;
     private City selectedCity;
     private int currentLevel;
@@ -139,11 +139,11 @@ public class ChooseAreaFragment extends Fragment {
     private void queryCounties(){
         titleText.setText(selectedCity.getCityName());
         backButton.setVisibility(View.VISIBLE);
-        countryList = DataSupport.where("cityid = ?", String.valueOf(selectedCity.getId())).find(Country.class);
-        if (countryList.size() > 0) {
+        countyList = DataSupport.where("cityid = ?", String.valueOf(selectedCity.getId())).find(County.class);
+        if (countyList.size() > 0) {
             dataList.clear();
-            for (Country county : countryList) {
-                dataList.add(county.getCountryName());
+            for (County county : countyList) {
+                dataList.add(county.getCountyName());
             }
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
