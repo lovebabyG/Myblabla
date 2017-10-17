@@ -1,4 +1,4 @@
-package com.example.myblabla;
+package com.example.myblabla.db;
 
 import org.litepal.crud.DataSupport;
 

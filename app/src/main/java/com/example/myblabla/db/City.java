@@ -1,10 +1,12 @@
-package com.example.myblabla;
+package com.example.myblabla.db;
+
+import org.litepal.crud.DataSupport;
 
 /**
  * Created by yijia_gong on 16/10/17.
  */
 
-public class City {
+public class City extends DataSupport {
     private int id;
     private String cityName;
     private int cityCode;

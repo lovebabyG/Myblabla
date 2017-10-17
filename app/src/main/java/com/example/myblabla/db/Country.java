@@ -1,14 +1,16 @@
 package com.example.myblabla.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by yijia_gong on 16/10/17.
  */
 
-public class Country {
+public class Country extends DataSupport {
     private int id;
     private String countryName;
     private String weatherId;
-    private int ciyId;
+    private int cityId;
 
     public void setId(int id) {
         this.id = id;
@@ -22,8 +24,8 @@ public class Country {
         this.weatherId = weatherId;
     }
 
-    public void setCiyId(int ciyId) {
-        this.ciyId = ciyId;
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 
     public int getId() {
@@ -39,7 +41,7 @@ public class Country {
         return weatherId;
     }
 
-    public int getCiyId() {
-        return ciyId;
+    public int getCity() {
+        return cityId;
     }
 }
