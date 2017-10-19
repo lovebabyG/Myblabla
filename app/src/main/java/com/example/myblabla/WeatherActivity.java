@@ -89,7 +89,7 @@ public class WeatherActivity extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         String weatherString = prefs.getString("weather", null);
-        if (weatherString != null){
+        if (weatherString != null) {
             Weather weather = Utility.handleWeatherResponse(weatherString);
             mWeatherId = weather.basic.weatherId;
             showWeatherInfo(weather);
@@ -108,17 +108,11 @@ public class WeatherActivity extends AppCompatActivity {
 
 
         String bingPic = prefs.getString("bing_pic", null);
-        if (bingPic != null){
+        if (bingPic != null) {
             Glide.with(this).load(bingPic).into(bingPicImg);
         } else {
             loadBingPic();
         }
-
-
-
-
-
-
     }
 
     public void requestWeather(final String weatherId){
